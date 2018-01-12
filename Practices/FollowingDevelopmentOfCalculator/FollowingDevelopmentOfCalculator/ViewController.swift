@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         if firstNum != "0"
         {
             operationTemp = operStr
+            changeColor(by: operStr)
         }
         
     }
@@ -130,6 +131,33 @@ class ViewController: UIViewController {
         firstNumDisplay.text = "0"
         secondNumDisplay.text = "0"
         resultDisplay.text = "0"
+        
+        changeLabelBG(color: .white)
+    }
+    
+    private func changeLabelBG(color: UIColor) {
+        firstNumDisplay.backgroundColor = color
+        secondNumDisplay.backgroundColor = color
+        resultDisplay.backgroundColor = color
+    }
+    
+    private func changeColor(by operation: String) {
+        var color: UIColor
+        
+        switch operation {
+        case "+":
+            color = .gray
+        case "−":
+            color = .green
+        case "×":
+            color = .red
+        case "÷":
+            color = .purple
+        default:
+            color = .black
+        }
+        
+        changeLabelBG(color: color)
     }
 }
 
