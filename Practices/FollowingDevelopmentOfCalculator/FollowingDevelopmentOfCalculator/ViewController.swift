@@ -9,78 +9,85 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var firstNumDisplay: UILabel!
     @IBOutlet weak var secondNumDisplay: UILabel!
     @IBOutlet weak var resultDisplay: UILabel!
     
     var operationTemp: String = ""
     
+    var firstNum: String = "0"
+    var secondNum: String = "0"
+    var resultNum: String = "0"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func clickDidNumber(_ sender: UIButton) {
         
+        let numberStr = sender.titleLabel!.text!
+        
         if operationTemp.count > 0 {
-            let numberStr = sender.titleLabel!.text!
-            let firstDisplay = secondNumDisplay.text!
-            if firstDisplay == "0" {
-                secondNumDisplay.text = numberStr
+            //            let firstDisplay = secondNumDisplay.text!
+            
+            if secondNum == "0" {
+                //                secondNumDisplay.text = numberStr
+                secondNum = numberStr
             }
             else {
-                secondNumDisplay.text = secondNumDisplay.text! + numberStr
+                secondNum = secondNum + numberStr
             }
+            secondNumDisplay.text = secondNum
         }
         else {
+            //            let firstDisplay = firstNumDisplay.text!
             
-            let numberStr = sender.titleLabel!.text!
-            let firstDisplay = firstNumDisplay.text!
-            if firstDisplay == "0" {
-                firstNumDisplay.text = numberStr
+            if firstNum == "0" {
+                resetDisplay()
+                firstNum = numberStr
             }
             else {
-                firstNumDisplay.text = firstNumDisplay.text! + numberStr
+                firstNum = firstNum + numberStr
             }
+            firstNumDisplay.text = firstNum
         }
         
         
     }
     
     @IBAction func clickDidCancel(_ sender: UIButton) {
-        firstNumDisplay.text = "0"
-        secondNumDisplay.text = "0"
-        resultDisplay.text = "0"
-        
-        operationTemp = ""
+        resetData()
+        resetDisplay()
         
     }
     
     @IBAction func clickDidResult(_ sender: UIButton) {
-        let secondNumStr = secondNumDisplay.text!
-        if secondNumStr != "0" {
-            let firstNum: Int = Int(firstNumDisplay.text!)!
-            let secondNum: Int = Int(secondNumDisplay.text!)!
+//        let secondNumStr = secondNumDisplay.text!
+        if secondNum != "0" {
+            let firstNum: Int = Int(self.firstNum)!
+            let secondNum: Int = Int(self.secondNum)!
             let op: String = operationTemp
             
             let resultNum = calculation(firstNum: firstNum, operation: op, secondNum: secondNum)
             resultDisplay.text = String(resultNum)
+            resetData()
         }
     }
     
     @IBAction func clickDidOperation(_ sender: UIButton) {
         let operStr = sender.titleLabel!.text!
         
-        let firstDisplay = firstNumDisplay.text!
-        if firstDisplay != "0"
+//        let firstDisplay = firstNumDisplay.text!
+        if firstNum != "0"
         {
-             operationTemp = operStr
+            operationTemp = operStr
         }
-
+        
     }
     
-    //MARK - Private Method
+    //MARK: - Private Method
     
     
     /// Operation function
@@ -110,5 +117,19 @@ class ViewController: UIViewController {
         }
     }
     
+    // DATA reset
+    private func resetData() {
+        firstNum = "0"
+        secondNum = "0"
+        resultNum = "0"
+        operationTemp = ""
+    }
+    
+    //UI reset
+    private func resetDisplay() {
+        firstNumDisplay.text = "0"
+        secondNumDisplay.text = "0"
+        resultDisplay.text = "0"
+    }
 }
 
