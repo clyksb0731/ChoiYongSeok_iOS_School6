@@ -2,6 +2,7 @@
 
 import UIKit
 
+// 20180115 실습 ----------------------------------------------------------------------------------------------
 // 이름(문자열)을 받아서 이름을 출력하는 함수
 func printName(with name: String) {
     print(name)
@@ -77,3 +78,273 @@ func stickTwoNums(integer1 num1: Int, integer2 num2: Int) -> String {
 func roundNum(realNumber num: Double) -> Int {
     return Int(num + 0.5)
 }
+
+// 20180116 실습 ----------------------------------------------------------------------------------------------
+// if
+//정수를 하나 입력받아 그 수가 짝수이면 true를 반환하는 함수
+func checkEvenNum(integer num: Int) -> Bool {
+    if num % 2 == 0 {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+//문자열 두개를 입력받아 두 문자열이 같으면 true를 반환해주는 함수
+func compareTwoNums(first str1: String, second str2: String) -> Bool {
+    if str1 == str2 {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+//두 수를 입력받아 큰 수를 반환하는 함수를 작성하세요.
+func biggerNumBTWTwoNums(first num1: Int, second num2: Int) -> Int {
+    if num1 > num2 {
+        return num1
+    }
+    else {
+        return num2
+    }
+}
+
+//정수를 하나 입력받아 3의 배수이면 true를 반환해주는 함수
+func checkMultipleWithThree(number num: Int) -> Bool {
+    if num % 3 == 0 {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+// 두개의 정수를 입력받아 두수의 나누셈을 반환해주는 함수 (첫번째 값을 두번째 값으로 나눈다. 0으로 나누기를 할시 0을 반환)
+func divisionBTWTwoNums(first num1: Int, second num2: Int) -> Double {
+    if num2 != 0 {
+        return Double(num1) / Double (num2)
+    }
+    else {
+        return 0
+    }
+}
+
+//시험점수를 입력받아 대학교 grade로 나눠서 반환해주는 함수 (ex: 95 >>> "A+"  /// 80 >>> "B")
+func grader(score: Int) -> String {
+    if score >= 95 {
+        return "A+"
+    }
+    else if score >= 90 && score < 95 {  // 순차적 판단으로 인해 && 포함한 뒤의 비교 연산은 필요없다.
+        return "A"
+    }
+    else if score >= 85 && score < 90 {
+        return "B+"
+    }
+    else if score >= 80 && score < 85 {
+        return "B"
+    }
+    else if score >= 75 && score < 80 {
+        return "C+"
+    }
+    else if score >= 70 && score < 75 {
+        return "C"
+    }
+    else if score >= 65 && score < 70 {
+        return "D+"
+    }
+    else if score >= 60 && score < 65 {
+        return "D"
+    }
+    else {
+        return "F"
+    }
+}
+
+//여러개의 grade를 입력받아서 grade의 평균을 반환해주는 함수
+func averageGrades(grade1 str1: String, grade2 str2: String, grade3 str3: String) -> Double {
+   return (pointer(grade: str1) + pointer(grade: str2) + pointer(grade: str3)) / 3
+}
+
+func pointer(grade: String) -> Double {
+    if grade == "A+" {
+        return 4.5
+    }
+    else if grade == "A" {
+        return 4.0
+    }
+    else if grade == "B+" {
+        return 3.5
+    }
+    else if grade == "B" {
+        return 3.0
+    }
+    else if grade == "C+" {
+        return 2.5
+    }
+    else if grade == "C" {
+        return 2.0
+    }
+    else if grade == "D+" {
+        return 1.5
+    }
+    else if grade == "D" {
+        return 1.0
+    }
+    else if grade == "F" {
+        return 0
+    }
+    return 0
+}
+
+//윤년 구하기 문제(년도를 받아서 윤년인지 아닌지 판단하는 함수)
+func leapYearChecker(year: Int) -> Bool {
+    if year % 4 == 0 {
+        if year % 100 == 0 {
+            if year % 400 == 0 {
+                return true
+            }
+            return false
+        }
+        return true
+    }
+    return false
+}
+
+//세 수를 입력받아 그 곱이 양수이면 true, 0 혹은 음수이면 false 반환하는 함수
+func checkPositiveNumByMuliplyingWith(first num1: Int, second num2: Int, third num3: Int) -> Bool {
+    if num1 * num2 * num3 > 0 {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+//switch
+// 월을 정수로 입력받아 해당월의 영어 이름을 반환해 주는 함수 (13 >> Error)
+func changeMonth(with num: Int) -> String {
+    switch num {
+    case 1:
+        return "January"
+    case 2:
+        return "February"
+    case 3:
+        return "March"
+    case 4:
+        return "April"
+    case 5:
+        return "May"
+    case 6:
+        return "June"
+    case 7:
+        return "July"
+    case 8:
+        return "August"
+    case 9:
+        return "September"
+    case 10:
+        return "December"
+    case 11:
+        return "November"
+    case 12:
+        return "December"
+    default:
+        return "Error"
+    }
+}
+
+// 년, 월을 입력받아 해당 달의 마지막 날을 반환 해주는 함수 (윤년 고려)
+func getLastDayFrom(year: Int, month: Int) -> Int {
+    let date: (Int, Int) = (year, month)
+    switch(date) {
+    case (_, 1):
+        return 31
+    case (let x, 2) where x % 4 == 0 && x % 100 != 0 || x % 400 == 0:
+        return 29
+    case (_, 2):
+        return 28
+    case (_, 3):
+        return 31
+    case (_, 4):
+        return 30
+    case (_, 5):
+        return 31
+    case (_, 6):
+        return 30
+    case (_, 7):
+        return 31
+    case (_, 8):
+        return 31
+    case (_, 9):
+        return 30
+    case (_, 10):
+        return 31
+    case (_, 11):
+        return 30
+    case (_, 12):
+        return 31
+    default:
+        return 0
+    }
+}
+getLastDayFrom(year: 2005, month: 2)
+getLastDayFrom(year: 2016, month: 2)
+
+// 시험 점수를 입력받아 대학교 grade로 나눠서 반환해주는 함수
+func graderSwitch(score: Int) -> String {
+    switch score {
+    case 95... :
+        return "A+"
+    case 90 ..< 95:
+        return "A"
+    case 85 ..< 90:
+        return "B+"
+    case 80 ..< 85:
+        return "B"
+    case 75 ..< 80:
+        return "C+"
+    case 70 ..< 75:
+        return "C"
+    case 65 ..< 70:
+        return "D+"
+    case 60 ..< 65:
+        return "D"
+    default:
+        return "F"
+    }
+}
+
+// 도형 면적 구하기 함수
+func areaCalculatorWith(lowerSide: Double? = nil, upperSide: Double? = nil, height: Double? = nil, radius: Double? = nil) -> Double {
+    let values: (Double?, Double?, Double?, Double?) = (lowerSide, upperSide, height, radius)
+    
+    switch values {
+    case (let x?, nil, nil, nil):
+        return x * x
+        
+    case (let x?, let y?, nil, nil):
+        return x * y
+        
+    case (let x?, let y?, let z?, nil):
+        return (x + y) * z / 2
+        
+    case (let x?, nil, let z?, nil):
+        return x * z / 2
+    case (nil, nil, nil, let r?):
+        return r * r * 3.14
+    default: -1
+    }
+    return 0
+}
+
+print(areaCalculatorWith(lowerSide: 4))
+
+//var x? = Optional(123)
+//var a = Int((Optional("123"))!)!
+//var b: Int? = "string"
+//print(b)
+
+// 도형피부피 구하기 함수
+
