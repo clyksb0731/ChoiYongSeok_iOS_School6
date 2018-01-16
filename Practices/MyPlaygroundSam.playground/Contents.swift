@@ -69,15 +69,11 @@ func changeDataType(integer num: Int) -> Double {
 }
 
 // 정수를 두개를 입력받아 두수를 합친 수를 출력하는 함수
-func sum(integer1 num1: Int, integer2 num2: Int) -> Int {
-    return num1 + num2
+func stickTwoNums(integer1 num1: Int, integer2 num2: Int) -> String {
+    return String(num1) + String(num2)
 }
 
 // 실수를 하나 입력받아서 소수점 첫 번째 자리에서 반올림 후 정수를 반환해주는 함수
 func roundNum(realNumber num: Double) -> Int {
     return Int(num + 0.5)
 }
-
-print("test")
-
-
