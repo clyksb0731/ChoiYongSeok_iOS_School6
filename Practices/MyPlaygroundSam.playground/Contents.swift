@@ -74,8 +74,8 @@ func sum(integer1 num1: Int, integer2 num2: Int) -> Int {
 }
 
 // 실수를 하나 입력받아서 소수점 첫 번째 자리에서 반올림 후 정수를 반환해주는 함수
-func round(realNumber num: Double) -> Int {
-    return Int(num)
+func roundNum(realNumber num: Double) -> Int {
+    return Int(num + 0.5)
 }
 
 
