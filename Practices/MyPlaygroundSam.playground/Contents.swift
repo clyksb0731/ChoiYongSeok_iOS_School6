@@ -317,6 +317,15 @@ func graderSwitch(score: Int) -> String {
 }
 
 // 도형 면적 구하기 함수
+
+/// 도형 넓이 구하는 함수
+///
+/// - Parameters:
+///   - lowerSide: 밑변
+///   - upperSide: 윗변
+///   - height: 높이
+///   - radius: 반경
+/// - Returns: 넓이
 func areaCalculatorWith(lowerSide: Double? = nil, upperSide: Double? = nil, height: Double? = nil, radius: Double? = nil) -> Double {
     let values: (Double?, Double?, Double?, Double?) = (lowerSide, upperSide, height, radius)
     
@@ -347,4 +356,6 @@ print(areaCalculatorWith(lowerSide: 4))
 //print(b)
 
 // 도형피부피 구하기 함수
+
+
 
