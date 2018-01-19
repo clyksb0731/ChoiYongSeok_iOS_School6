@@ -352,168 +352,182 @@
 
 // 20180118 실습 ----------------------------------------------------------------------------------------------
 // 구구단 단 입력하면 해당하는 구구단 출력하는 함수
-func timesTable(times: Int) {
-    print("\(times)단: ")
-    var count: Int = 0
-    while(count < 9) {
-        count += 1
-        print("\(times) X \(count) = \(times * count)")
+//func timesTable(times: Int) {
+//    print("\(times)단: ")
+//    var count: Int = 0
+//    while(count < 9) {
+//        count += 1
+//        print("\(times) X \(count) = \(times * count)")
+//    }
+//}
+//
+//timesTable(times: 2)
+//print() // 한줄 띄우기
+//
+//// 삼각수 구하기
+//func triangular(finalNum num: Int) -> Int {
+//    var count = num
+//    var sum: Int = 0
+//
+//    while(count > 0) {
+//        sum += count
+//        count -= 1
+//    }
+//
+//    return sum
+//}
+//
+//print(triangular(finalNum: 10))
+//print() // 한줄 띄우기
+//
+//// 각 자리수 더하기 함수
+//func addAll(Number num: Int) -> Int {
+//    var tmpNum: Int = num
+//    var sum: Int = 0
+//
+//    while(tmpNum > 0) {
+//        sum = sum + (tmpNum % 10)
+//        tmpNum /= 10
+//    }
+//
+//    return sum
+//}
+//
+//print(addAll(Number: 123))
+//print() // 한줄 띄우기
+//
+//// 숫자 리버스 함수
+//func revers(Number num: Int) -> Int {
+//    var digits: Int = 0
+//    var tmpNum = num
+//    var resultNum = 0
+//
+//    while(tmpNum > 0) {
+//        digits += 1
+//        tmpNum /= 10
+//    }
+////    print("digit: \(digits)")
+//
+//    tmpNum = num
+////    print("tmpNum: \(tmpNum)")
+//
+//    while(tmpNum > 0) {
+//        var tmpResult: Int = 0
+//        var tmpDigits: Int = digits
+//        tmpResult = (tmpNum % 10)
+//        while(tmpDigits > 1) {
+//            tmpResult *= 10
+//            tmpDigits -= 1
+//        }
+//        tmpNum /= 10
+//        digits -= 1
+//        resultNum = resultNum + tmpResult
+//    }
+//
+//    return resultNum
+//}
+//
+//// revers 다른 버전
+//func reversAnotherVersion(Number num: Int) -> Int {
+//    var tmpNum: Int = num
+//    var resultNum: Int = 0
+//
+//    while(tmpNum > 0) {
+//        resultNum = resultNum * 10 + tmpNum % 10
+//        tmpNum /= 10
+//    }
+//
+//    return resultNum
+//}
+//
+//print(revers(Number: 341))
+//
+//print(reversAnotherVersion(Number: 123))
+//print() // 한줄 띄우기
+//
+//// 단을 받아서 출력해주는 함수 (for문으로 변경)
+//func timesTable_for(Number num: Int) {
+//    print("\(num)단:")
+//    for index in 1...9 {
+//        print("\(num) X \(index) = \(num * index)")
+//    }
+//}
+//
+//print(timesTable_for(Number: 7))
+//print() // 한줄 띄우기
+//
+//// 팩토리얼
+//func factorial(Number num: Int) -> Int {
+//    var tmpNum: Int = 1
+//    print("\(num)!")
+//    for index in 1...num {
+//        tmpNum = tmpNum * index
+//    }
+//    return tmpNum
+//}
+//
+//print(factorial(Number: 6))
+//print()
+//
+//// Collatz 추측 알고리즘 - 입력된 수가 짝수라면 2로 나누고, 홀수라면 3을 곱하고 1을 더한 다음 결과로 나온 수에 같은 작업을 1이 될때까지 반복할 경우 모든 수가 1이 된다는 추측
+//// 단 500번을 반복해도 1이 되지 않는다면 -1을 반환
+//func collatz(Number num: Int) -> Int {
+//    var tmpNum: Int = num
+//
+//    for index in 0...500 {
+//        if tmpNum == 1 {
+//            return index
+//        }
+//        else {
+////            print("temp: \(index), \(tmpNum)")
+//            if tmpNum % 2 == 0 {
+//                tmpNum /= 2
+//            }
+//            else {
+//                tmpNum = tmpNum * 3 + 1
+//            }
+//        }
+//    }
+//    return -1
+//}
+//
+//print(collatz(Number: 6))
+//print()
+//
+//// Harshad 수
+//// 양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나뉘어 떨어져야 한다. harshad 수이면 true를 아니면 false를 반환한다.
+//func harshad(Number num: Int) -> Bool {
+//    var tmpNum: Int = num
+//    var sum: Int = 0
+//
+//    while tmpNum > 0 {
+//        sum = sum + tmpNum % 10
+//        tmpNum /= 10
+//    }
+//
+//    if num % sum == 0 {
+//        return true
+//    }
+//    else {
+//        return false
+//    }
+//}
+//
+//harshad(Number: 12) ? print("Harshad") : print("Not harshad")
+//print(harshad(Number: 12))
+
+// 20180118 실습 ----------------------------------------------------------------------------------------------
+func arrayTest() {
+    var list: [String] = ["my", "name", "is", "Yongseok", "Choi"]
+    list.append("입니다.")
+    print("list배열의 총 갯수는:", list.count)
+    print(list[3])
+    list.remove(at: 3)
+    list.insert("I will introuduce it myself", at: 0)
+    
+    for text in list {
+        print(text)
     }
 }
 
-timesTable(times: 2)
-print() // 한줄 띄우기
-
-// 삼각수 구하기
-func triangular(finalNum num: Int) -> Int {
-    var count = num
-    var sum: Int = 0
-    
-    while(count > 0) {
-        sum += count
-        count -= 1
-    }
-    
-    return sum
-}
-
-print(triangular(finalNum: 10))
-print() // 한줄 띄우기
-
-// 각 자리수 더하기 함수
-func addAll(Number num: Int) -> Int {
-    var tmpNum: Int = num
-    var sum: Int = 0
-    
-    while(tmpNum > 0) {
-        sum = sum + (tmpNum % 10)
-        tmpNum /= 10
-    }
-    
-    return sum
-}
-
-print(addAll(Number: 123))
-print() // 한줄 띄우기
-
-// 숫자 리버스 함수
-func revers(Number num: Int) -> Int {
-    var digits: Int = 0
-    var tmpNum = num
-    var resultNum = 0
-    
-    while(tmpNum > 0) {
-        digits += 1
-        tmpNum /= 10
-    }
-//    print("digit: \(digits)")
-    
-    tmpNum = num
-//    print("tmpNum: \(tmpNum)")
-    
-    while(tmpNum > 0) {
-        var tmpResult: Int = 0
-        var tmpDigits: Int = digits
-        tmpResult = (tmpNum % 10)
-        while(tmpDigits > 1) {
-            tmpResult *= 10
-            tmpDigits -= 1
-        }
-        tmpNum /= 10
-        digits -= 1
-        resultNum = resultNum + tmpResult
-    }
-    
-    return resultNum
-}
-
-// revers 다른 버전
-func reversAnotherVersion(Number num: Int) -> Int {
-    var tmpNum: Int = num
-    var resultNum: Int = 0
-    
-    while(tmpNum > 0) {
-        resultNum = resultNum * 10 + tmpNum % 10
-        tmpNum /= 10
-    }
-    
-    return resultNum
-}
-
-print(revers(Number: 341))
-
-print(reversAnotherVersion(Number: 123))
-print() // 한줄 띄우기
-
-// 단을 받아서 출력해주는 함수 (for문으로 변경)
-func timesTable_for(Number num: Int) {
-    print("\(num)단:")
-    for index in 1...9 {
-        print("\(num) X \(index) = \(num * index)")
-    }
-}
-
-print(timesTable_for(Number: 7))
-print() // 한줄 띄우기
-
-// 팩토리얼
-func factorial(Number num: Int) -> Int {
-    var tmpNum: Int = 1
-    print("\(num)!")
-    for index in 1...num {
-        tmpNum = tmpNum * index
-    }
-    return tmpNum
-}
-
-print(factorial(Number: 6))
-print()
-
-// Collatz 추측 알고리즘 - 입력된 수가 짝수라면 2로 나누고, 홀수라면 3을 곱하고 1을 더한 다음 결과로 나온 수에 같은 작업을 1이 될때까지 반복할 경우 모든 수가 1이 된다는 추측
-// 단 500번을 반복해도 1이 되지 않는다면 -1을 반환
-func collatz(Number num: Int) -> Int {
-    var tmpNum: Int = num
-    
-    for index in 0...500 {
-        if tmpNum == 1 {
-            return index
-        }
-        else {
-//            print("temp: \(index), \(tmpNum)")
-            if tmpNum % 2 == 0 {
-                tmpNum /= 2
-            }
-            else {
-                tmpNum = tmpNum * 3 + 1
-            }
-        }
-    }
-    return -1
-}
-
-print(collatz(Number: 6))
-print()
-
-// Harshad 수
-// 양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나뉘어 떨어져야 한다. harshad 수이면 true를 아니면 false를 반환한다.
-func harshad(Number num: Int) -> Bool {
-    var tmpNum: Int = num
-    var sum: Int = 0
-    
-    while tmpNum > 0 {
-        sum = sum + tmpNum % 10
-        tmpNum /= 10
-    }
-    
-    if num % sum == 0 {
-        return true
-    }
-    else {
-        return false
-    }
-}
-
-harshad(Number: 12) ? print("Harshad") : print("Not harshad")
-print(harshad(Number: 12))
-
-
+arrayTest()
