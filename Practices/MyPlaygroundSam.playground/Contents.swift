@@ -531,3 +531,52 @@ func arrayTest() {
 }
 
 arrayTest()
+
+func setTest() {
+    let oddDigits: Set = [1, 3, 5, 7, 9]
+    let evenDigits: Set = [2, 4, 6, 8]
+    let primeDigits: Set = [2, 3, 5, 7]
+    
+    print("Test ===========")
+    
+    // 교집합
+    let intersectList = oddDigits.intersection(evenDigits)
+    print(intersectList)
+    
+    // 교집합의 여집합
+    let differenceList = oddDigits.symmetricDifference(primeDigits)
+    print(differenceList)
+    
+    //합집합 & 정렬
+    let unionList = oddDigits.union(evenDigits).sorted()
+    print(unionList)
+    
+    // 차집합 & 정렬
+    let subtractList = oddDigits.subtracting(primeDigits).sorted()
+    print(subtractList)
+
+}
+
+setTest()
+
+func dicTest()
+{
+    //기본 딕셔너리
+    var dic:[String:Any] = ["name":"joo", "age":20, "job":"Developer",
+                            "isSingle":true]
+    //딕셔너리 추가
+    dic.updateValue("address", forKey: "Seoul")
+    //딕셔너리 수정
+    dic.updateValue("name", forKey: "winman")
+    //삭제
+    dic.removeValue(forKey: "isSingle")
+    //값 불러오기
+    let introduce: String = "제 이름은" + (dic["name"] as! String) + "입니다."
+    
+    let doubleAge = (dic["age"] as! Int) * 2
+    
+    print(doubleAge)
+    print(introduce)
+}
+
+dicTest()
