@@ -517,66 +517,131 @@
 //print(harshad(Number: 12))
 
 // 20180118 실습 ----------------------------------------------------------------------------------------------
-func arrayTest() {
-    var list: [String] = ["my", "name", "is", "Yongseok", "Choi"]
-    list.append("입니다.")
-    print("list배열의 총 갯수는:", list.count)
-    print(list[3])
-    list.remove(at: 3)
-    list.insert("I will introuduce it myself", at: 0)
-    
-    for text in list {
-        print(text)
+//func arrayTest() {
+//    var list: [String] = ["my", "name", "is", "Yongseok", "Choi"]
+//    list.append("입니다.")
+//    print("list배열의 총 갯수는:", list.count)
+//    print(list[3])
+//    list.remove(at: 3)
+//    list.insert("I will introuduce it myself", at: 0)
+//
+//    for text in list {
+//        print(text)
+//    }
+//}
+//
+//arrayTest()
+//
+//func setTest() {
+//    let oddDigits: Set = [1, 3, 5, 7, 9]
+//    let evenDigits: Set = [2, 4, 6, 8]
+//    let primeDigits: Set = [2, 3, 5, 7]
+//
+//    print("Test ===========")
+//
+//    // 교집합
+//    let intersectList = oddDigits.intersection(evenDigits)
+//    print(intersectList)
+//
+//    // 교집합의 여집합
+//    let differenceList = oddDigits.symmetricDifference(primeDigits)
+//    print(differenceList)
+//
+//    //합집합 & 정렬
+//    let unionList = oddDigits.union(evenDigits).sorted()
+//    print(unionList)
+//
+//    // 차집합 & 정렬
+//    let subtractList = oddDigits.subtracting(primeDigits).sorted()
+//    print(subtractList)
+//
+//}
+//
+//setTest()
+//
+//func dicTest()
+//{
+//    //기본 딕셔너리
+//    var dic:[String:Any] = ["name":"joo", "age":20, "job":"Developer",
+//                            "isSingle":true]
+//    //딕셔너리 추가
+//    dic.updateValue("address", forKey: "Seoul")
+//    //딕셔너리 수정
+//    dic.updateValue("name", forKey: "winman")
+//    //삭제
+//    dic.removeValue(forKey: "isSingle")
+//    //값 불러오기
+//    let introduce: String = "제 이름은" + (dic["name"] as! String) + "입니다."
+//
+//    let doubleAge = (dic["age"] as! Int) * 2
+//
+//    print(doubleAge)
+//    print(introduce)
+//}
+//
+//dicTest()
+
+// 20180122 실습 ----------------------------------------------------------------------------------------------
+//시작과 끝수를 받아서 두 수 사이의 모든 수를 가지고 있는 배열 만들기
+func makeArrayBtw(firstNum num1: Int, secondNum num2: Int) -> [Int] {
+    var tmpArray: [Int] = []
+    for num in num1...num2 {
+        tmpArray.append(num)
+    }
+    return tmpArray
+}
+
+//정수 타입의 배열을 입력받아 모든 배열의 수의 합을 리턴하는 함수
+func sumAllValue(of arr: [Int]) -> Int {
+    var tmpSum: Int = 0
+    for num in arr {
+        tmpSum += num
+    }
+    return tmpSum
+}
+
+//딕셔너리에 있는 모든 데이터 출력하는 함수 >> 데이터: ["name":"joo", "age":20, "job":"Developer"]
+func printAllValue(from dic: [String:String]) {
+    for (key, value) in dic {
+        print(key, value)
     }
 }
 
-arrayTest()
-
-func setTest() {
-    let oddDigits: Set = [1, 3, 5, 7, 9]
-    let evenDigits: Set = [2, 4, 6, 8]
-    let primeDigits: Set = [2, 3, 5, 7]
-    
-    print("Test ===========")
-    
-    // 교집합
-    let intersectList = oddDigits.intersection(evenDigits)
-    print(intersectList)
-    
-    // 교집합의 여집합
-    let differenceList = oddDigits.symmetricDifference(primeDigits)
-    print(differenceList)
-    
-    //합집합 & 정렬
-    let unionList = oddDigits.union(evenDigits).sorted()
-    print(unionList)
-    
-    // 차집합 & 정렬
-    let subtractList = oddDigits.subtracting(primeDigits).sorted()
-    print(subtractList)
-
+//정수 타입의 배열을 받아서 배열안의 중복된 수를 모두 제거된 배열을 반환하는 함수
+func removeValueRedundancy(from arr: [Int]) -> [Int] {
+    var tmpArr: [Int] = []
+    var isIn = false
+    for value in arr {
+        for valInTmpArr in tmpArr {
+            if value == valInTmpArr {
+                isIn = true
+            }
+        }
+        if !isIn {
+            tmpArr.append(value)
+        }
+    }
+    return tmpArr
 }
 
-setTest()
-
-func dicTest()
-{
-    //기본 딕셔너리
-    var dic:[String:Any] = ["name":"joo", "age":20, "job":"Developer",
-                            "isSingle":true]
-    //딕셔너리 추가
-    dic.updateValue("address", forKey: "Seoul")
-    //딕셔너리 수정
-    dic.updateValue("name", forKey: "winman")
-    //삭제
-    dic.removeValue(forKey: "isSingle")
-    //값 불러오기
-    let introduce: String = "제 이름은" + (dic["name"] as! String) + "입니다."
-    
-    let doubleAge = (dic["age"] as! Int) * 2
-    
-    print(doubleAge)
-    print(introduce)
+//정수 배열을 입력받아, 배열의 요소 중 두 개를 선택하는 조합을 모두 포함하는 배열을 작성하세요.
+//>> [1, 2, 3] -> [[1, 2], [1, 3], [2, 3]]
+func combi(with arr: [Int]) -> [[Int]] {
+    var tmpArr: [[Int]] = []
+    var tmpInArr: [Int] = []
+    for index1 in arr.startIndex ... arr.endIndex {
+        for index2 in arr.startIndex + 1 ... arr.count - 1 {
+           //TODO
+        }
+    }
+    tmpArr.append(tmpInArr)
+    return tmpArr
 }
 
-dicTest()
+var tmp: [Int] = [1,2,3]
+tmp.startIndex
+tmp.endIndex
+
+//정수 타입의 배열을 입력받아서 오름차순으로 정렬된 배열을 만들어 리턴하시오.(정렬 함수 사용x) 
+
+//>>에라토스테체 알고리즘을 이용하여  입력된 숫자까지의 모든 소수의 배열을 반환하는 함수
