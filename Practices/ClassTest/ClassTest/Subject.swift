@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Subject {
+struct Subject {
     var name: String
     var score: Int
     
