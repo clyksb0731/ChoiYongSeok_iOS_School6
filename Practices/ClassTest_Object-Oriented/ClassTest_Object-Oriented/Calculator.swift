@@ -15,11 +15,11 @@ class Calculator {
     ///
     /// - Parameter p: 해당 학생
     /// - Returns: 해당 학생의 평균
-    func subjectsAverage(of p: Person) -> Double {
-        for subject in p.subjects {
+    func subjectsAverage(of p: Student) -> Double {
+        for subject in p.subjects! {
             tmpSum += subject.score
         }
-        return Double(tmpSum) / Double(p.subjects.count)
+        return Double(tmpSum) / Double(p.subjects!.count)
     }
     
     /// 두 사람의 같은 과목 비교하여 더 높은 점수를 갖는 사람 찾기
@@ -29,19 +29,19 @@ class Calculator {
     ///   - firstPerson: 비교할 첫 번째 학생
     ///   - secondPerson: 비교할 두 번째 학생
     /// - Returns: 더 높은 과목 점수를 갖는 학생
-    func compareSameSubjectBtw(subject sub: String, firstPerson p1: Person, secondPerson p2: Person) -> Person {
+    func compareSameSubjectBtw(subject sub: String, firstPerson p1: Student, secondPerson p2: Student) -> Student {
         var tmpScore_first: Int = 0
         var tmpScore_second: Int = 0
         
         // 첫 번째 학생의 해당 과목의 점수 추출
-        for subject in p1.subjects {
+        for subject in p1.subjects! {
             if subject.name == sub {
                 tmpScore_first = subject.score
             }
         }
         
         // 두 번째 학생의 해당 과목의 점수 추출
-        for subject in p2.subjects {
+        for subject in p2.subjects! {
             if subject.name == sub {
                 tmpScore_second = subject.score
             }
@@ -62,12 +62,12 @@ class Calculator {
     ///   - sub: 비교할 과목
     ///   - among: 학생들
     /// - Returns: 제일 높은 점수를 갖는 학생
-    func whoIsTheBestOneforOneSubject(subject sub: String, people among: Person...) -> Person? {
+    func whoIsTheBestOneforOneSubject(subject sub: String, people among: Student...) -> Student? {
         var tmpTopScore: Int = 0
-        var tmpPerson: Person?
+        var tmpPerson: Student?
         
         for person in among {
-            for subject in person.subjects {
+            for subject in person.subjects! {
                 if subject.name == sub {                    
                     if subject.score > tmpTopScore {
                         tmpTopScore = subject.score
@@ -77,6 +77,77 @@ class Calculator {
             }
         }
         return tmpPerson
+    }
+    
+    func compareUniversityStudentGrade(subject: String, firstone st1: Student, secondone st2: 
+        Student) -> Student? {
+        guard st1.schoolGrade == 3 && st2.schoolGrade == 3 else {
+            return nil
+        }
+        
+        var valueOfGrade1: Double = 0
+        var valueOfGrade2: Double = 0
+        
+        for sub in st1.subjects! {
+            if sub.name == subject {
+                switch sub.grade! {
+                case "A+":
+                    valueOfGrade1 = 4.5
+                case "A":
+                    valueOfGrade1 = 4.0
+                case "B+":
+                    valueOfGrade1 = 3.5
+                case "B":
+                    valueOfGrade1 = 3.0
+                case "C+":
+                    valueOfGrade1 = 2.5
+                case "C":
+                    valueOfGrade1 = 2.0
+                case "D+":
+                    valueOfGrade1 = 1.5
+                case "D":
+                    valueOfGrade1 = 1.0
+                default:
+                    valueOfGrade1 = 0
+                }
+            }
+        }
+        
+        for sub in st2.subjects! {
+            if sub.name == subject {
+                switch sub.grade! {
+                case "A+":
+                    valueOfGrade2 = 4.5
+                case "A":
+                    valueOfGrade2 = 4.0
+                case "B+":
+                    valueOfGrade2 = 3.5
+                case "B":
+                    valueOfGrade2 = 3.0
+                case "C+":
+                    valueOfGrade2 = 2.5
+                case "C":
+                    valueOfGrade2 = 2.0
+                case "D+":
+                    valueOfGrade2 = 1.5
+                case "D":
+                    valueOfGrade2 = 1.0
+                default:
+                    valueOfGrade2 = 0
+                }
+            }
+        }
+        
+        if valueOfGrade1 > valueOfGrade2 {
+            return st1
+        }
+        else if valueOfGrade1 == valueOfGrade2 {
+            print("******", valueOfGrade1, valueOfGrade2)
+            return Student(schoolGrade: 0, major: "none", name: "s_a_m_e", gender: "none")
+        }
+        else {
+            return st1
+        }
     }
     
 }
