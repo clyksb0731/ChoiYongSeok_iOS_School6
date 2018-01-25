@@ -62,7 +62,7 @@ class Calculator {
     ///   - sub: 비교할 과목
     ///   - among: 학생들
     /// - Returns: 제일 높은 점수를 갖는 학생
-    func whoIsTheBestOneforOneSubject(subject sub: String, people among: Student...) -> Student? {
+    func whoIsTheBestOneforTheOne(subject sub: String, people among: Student...) -> Student? {
         var tmpTopScore: Int = 0
         var tmpPerson: Student?
         

@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         // Optional binding
         // Find the person which has the best score for the specific subject
-        if let bestOne: Student = cal.whoIsTheBestOneforOneSubject(subject: "컴퓨터", people: st1, st2, st3, st4, st5) {
+        if let bestOne: Student = cal.whoIsTheBestOneforTheOne(subject: "컴퓨터", people: st1, st2, st3, st4, st5) {
             print("학생들 중 컴퓨터의 점수가 가장 높은 사람은 \(bestOne.name)이다.")
         }
         
