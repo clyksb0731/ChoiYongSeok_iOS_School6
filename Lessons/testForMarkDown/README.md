@@ -6,8 +6,7 @@ func makeViews(number num: Int) {
         
         for index in 0..<num {
             let tmpView: UIView = UIView()
-	    // To add the function which can change color
-            tmpView.backgroundColor = getColor(num: index)	    
+            tmpView.backgroundColor = getColor(num: index) // To add the function which can change color    
             viewPackage?.append(tmpView)
         }
     }
