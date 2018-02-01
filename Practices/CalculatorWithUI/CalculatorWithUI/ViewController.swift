@@ -26,9 +26,36 @@ class ViewController: UIViewController {
 //        createFrame()
         setBasicSection()
         displayLabelList = createDisplayLabel(number: 1)
-        if let tmpDLL = displayLabelList, !((displayLabelList?.isEmpty)!) {
-            
-        }
+//        if let tmpDLL = displayLabelList, !((displayLabelList?.isEmpty)!) {
+//
+//        }
+        
+        
+        //// to test
+//        var tmpButton: UIButton = UIButton()
+//        tmpButton.frame = CGRect(x: 50, y: 50, width: 50, height: 50)
+//        tmpButton.backgroundColor = .black
+//        tmpButton.setTitleColor(.gray, for: .normal)
+//        tmpButton.setTitle("버튼1", for: .normal)
+//        tmpButton.addTarget(self, action: #selector(self.tmpActionForBtn(_:)), for: .touchUpInside)
+//        self.view.addSubview(tmpButton)
+//
+//         var tmpButton2: UIButton = UIButton()
+//        tmpButton2.frame = CGRect(x: 50, y: 105, width: 50, height: 50)
+//        tmpButton2.backgroundColor = .black
+//        tmpButton2.setTitleColor(.yellow, for: .normal)
+//        tmpButton2.setTitle("버튼2", for: .normal)
+//        tmpButton2.addTarget(self, action: #selector(self.tmpActionForBtn(_:)), for: .touchUpInside)
+//        self.view.addSubview(tmpButton2)
+//
+//        var tmpButton3: UIButton = UIButton()
+//        tmpButton3.frame = CGRect(x: 50, y: 160, width: 50, height: 50)
+//        tmpButton3.backgroundColor = .black
+//        tmpButton3.setTitleColor(.red, for: .normal)
+//        tmpButton3.setTitle("버튼3", for: .normal)
+//        tmpButton3.addTarget(self, action: #selector(self.tmpActionForBtn(_:)), for: .touchUpInside)
+//        self.view.addSubview(tmpButton3)
+        
         
         
         
@@ -40,6 +67,21 @@ class ViewController: UIViewController {
         
         
     }
+    
+//    @objc func tmpActionForBtn(_ sender: UIButton) {
+//        if let tmpTitle = sender.titleLabel?.text {
+//            switch tmpTitle {
+//            case "버튼1":
+//                print("버튼1이 눌렸습니다.")
+//            case "버튼2":
+//                print("버튼2가 눌렸습니다.")
+//            case "버튼3":
+//                print("버튼3이 눌렸습니다.")
+//            default:
+//                print("??")
+//            }
+//        }
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
