@@ -185,56 +185,60 @@ class ViewController: UIViewController {
     ///////////////////////// 버튼을 복수로 선택하여 값 출력 ////////////////////////////
     
     @objc func actionForTmpButtons(_ sender: UIButton) {
-//        guard let selectedBtnList = selectedBtnList, !(selectedBtnList.isEmpty) else {
-//            return
-//        }
-//
         if selectedBtnList == nil {
             selectedBtnList = []
         }
         
-        
-        if sender.isSelected == false {
-            sender.isSelected = true
-            if selectedBtnList!.count == 0 {
-                selectedBtnList!.append(sender)
-            }
-            else {
+        if sender.isSelected == true {
+            sender.isSelected = false
+            
+            if !(selectedBtnList!.isEmpty) {
                 for index in 0..<selectedBtnList!.count {
-                    if selectedBtnList![index].tag != sender.tag {
-                        selectedBtnList!.append(sender)
+                    if selectedBtnList![index].tag == sender.tag {
+                        selectedBtnList!.remove(at: index)
+                        break
                     }
                 }
             }
         }
         else {
-            sender.isSelected = false
-            if selectedBtnList!.count != 0 {
+            sender.isSelected = true
+            
+            if selectedBtnList!.isEmpty {
+                selectedBtnList!.append(sender)
+            }
+            else {
+                // tag 에 맞는게 없으면 append 하게 끔... !!! 이 구문 넣어야 함
+                // tmpTag 없이 하는 방법?
+                var tmpTag: Bool = true
                 for index in 0..<selectedBtnList!.count {
                     if selectedBtnList![index].tag == sender.tag {
-                        selectedBtnList!.remove(at: index)
+                        tmpTag = false
+                        break
+                        // selectedBtnList!.append(sender)
                     }
                 }
+                if tmpTag {
+                    selectedBtnList!.append(sender)
+                }
             }
+            
         }
+        
     }
     
     @objc func showResult(_ sender: UIButton) {
-        
-//        guard let tmpLb = resultLb, let selectedBtnList = selectedBtnList, !(selectedBtnList.isEmpty) else {
-//            return
-//        }
-        
-        var tmpStr: String = ""
-        
-        print(selectedBtnList!.count)
-        for index in 0..<selectedBtnList!.count {
-            tmpStr = tmpStr + ", " + String(selectedBtnList![index].tag)
+        guard let selectedBtnList = selectedBtnList else {
+            return
         }
-    
-//        resultLb!.text = "temp"
-        resultLb!.text = String(tmpStr)
         
+        var tmpStr = ""
+        
+        for list in selectedBtnList {
+            tmpStr = tmpStr + String(list.tag) + " "
+        }
+        
+        resultLb?.text = tmpStr
     }
 
     ///////////////////////// 버튼을 복수로 선택하여 값 출력 ////////////////////////////
