@@ -1,2 +1,2 @@
-# Collection Type
+# Loop
 

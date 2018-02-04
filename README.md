@@ -6,7 +6,7 @@
 <a href="https://www.apple.com/kr/ios"><img src="./contents/logo_iOS.png" height="35" alt="logo swift"></a> based on <a href=""><img src="./contents/logo_swift.png" height="35" alt="logo iOS"></a>
 </p>
 
-Learning iOS development based on Swift. This repository has lesson contents and code sample related to them.
+I have been learning iOS development based on Swift at Fast Campus. Course's name is 'iOS Development School'. In this repository, there are lesson contents and code samples related to them. This school started 8th of January in 2018.
 
 ## Lessons
 

@@ -1,2 +1,2 @@
-# Condition
+# Function
 

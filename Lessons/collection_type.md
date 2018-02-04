@@ -1,2 +1,2 @@
-# Class / Struct
+# Collection Type
 
