@@ -1,8 +1,8 @@
 # iOS School at Fast Campus
 
-## about
+## About
 
-[![logo swift](https://github.com/clyksb0731/YongseokChoi_iOS_School6/tree/master/contents/logo_swift.png)](https://www.swift.org)
+[![logo swift](./contents/logo_swift.png)](https://www.swift.org)
 
 ## Lessons
 
@@ -16,3 +16,4 @@
 8. Optional
 9. Property / Access Modifier
 10. UI
+
