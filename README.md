@@ -2,13 +2,11 @@
 
 ## About
 
-Learning iOS development based on Swift. This repository has lesson contents and code sample related to them.
-
 <p align="right">
-<a href="https://www.apple.com/kr/ios"><img src="./contents/logo_iOS.png" height="30" alt="logo swift"></a> based on <a href=""><img src="" height="30" alt="logo iOS"></a>
+<a href="https://www.apple.com/kr/ios"><img src="./contents/logo_iOS.png" height="35" alt="logo swift"></a> based on <a href=""><img src="./contents/logo_swift.png" height="35" alt="logo iOS"></a>
 </p>
 
-[![logo iOS](./contents/logo_iOS.png)](https://www.apple.com/kr/ios) based on [![logo swift](./contents/logo_swift.png)](https://www.swift.org)
+Learning iOS development based on Swift. This repository has lesson contents and code sample related to them.
 
 ## Lessons
 
