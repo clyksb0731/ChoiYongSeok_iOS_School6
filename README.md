@@ -1,33 +1,18 @@
-# Yongseok Choi
-## iOS School 6기
+# iOS School at Fast Campus
 
-### Lesson 1
-> Git
-<a href="#id"> 한글 </a>
+## about
 
-### Lesson 2
-> Variable
+[![logo swift](https://github.com/clyksb0731/YongseokChoi_iOS_School6/tree/master/contents/logo_swift.png)](https://www.swift.org)
 
-### Lesson 3
-> Function
+## Lessons
 
-### Lesson 4
-> Condition
-
-### Lesson 4
-> Loop
-
-### Lesson 4
-> Collection Type
-
-### Lesson 4
-> Class / Struct
-
-### Lesson 4
-> Optional
-
-### Lesson 4
-> Property / Access Modifier
-
-### Lesson 4
-> UI
+1. Git
+2. Variable
+3. Function
+4. Condition
+5. Loop
+6. Collection Type
+7. Class / Struct
+8. Optional
+9. Property / Access Modifier
+10. UI
