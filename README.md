@@ -20,6 +20,7 @@ I started studying iOS development based on Swift at Fast Campus. Course's name 
 8. [Optional](./Lessons/optional.md)
 9. [Property / Access Modifier](./Lessons/property_access_modifier.md)
 10. [UI](./Lessons/ui.md)
+11. [Application Life Cycle](./Lessons/application_life_cycle.md)
 
 ### contact
 > Email: clyksb0731@gmail.com
