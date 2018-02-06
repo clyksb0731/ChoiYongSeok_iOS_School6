@@ -61,15 +61,15 @@ class CustomizedView: UIView {
     private func layoutView() {
         guard let bottomView = bottomView, let imgView = imgView, let upperLabel = upperLabel, let lowerLabel = lowerLabel, let coverBtn = coverBtn else { return }
         
-        bottomView.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
+        bottomView.frame = self.bounds
         
-        imgView.frame = CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height)
+        imgView.frame = self.bounds
         
         upperLabel.frame = CGRect(x: 0, y: 0, width: bottomView.bounds.size.width, height: bottomView.bounds.size.height * 2 / 3)
         
         lowerLabel.frame = CGRect(x: 0, y: upperLabel.bounds.size.height, width: bottomView.bounds.size.width, height: bottomView.bounds.size.height * 1 / 3)
         
-        coverBtn.frame = CGRect(x: 0, y: 0, width: bottomView.bounds.size.width, height: bottomView.bounds.size.height)
+        coverBtn.frame = self.bounds
     }
     
     func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents) {
