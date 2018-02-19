@@ -210,6 +210,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <viewLayoutGuide key="safeArea" id="Ltd-Ot-LwZ"/>
                                 <state key="normal" title="Home"/>
+                                <connections>
+                                    <action selector="goToHomeAction:" destination="7Gj-L7-0pK" eventType="touchUpInside" id="Wmi-mS-q2o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
