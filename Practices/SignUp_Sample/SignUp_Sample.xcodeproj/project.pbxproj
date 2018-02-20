@@ -14,6 +14,7 @@
 		CA49BE092038FD98007AED6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49BE072038FD98007AED6D /* LaunchScreen.storyboard */; };
 		CA49BE15203904BD007AED6D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA49BE14203904BD007AED6D /* SignUpViewController.swift */; };
 		CA49BE1720390500007AED6D /* ContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA49BE1620390500007AED6D /* ContentsViewController.swift */; };
+		CA76A5F8203BC82300BB64A7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA76A5F7203BC82300BB64A7 /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CA49BE0A2038FD98007AED6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA49BE14203904BD007AED6D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CA49BE1620390500007AED6D /* ContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsViewController.swift; sourceTree = "<group>"; };
+		CA76A5F7203BC82300BB64A7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				CA49BDFE2038FD98007AED6D /* AppDelegate.swift */,
 				CA49BE002038FD98007AED6D /* ViewController.swift */,
-				CA49BE1620390500007AED6D /* ContentsViewController.swift */,
+				CA76A5F7203BC82300BB64A7 /* SignInViewController.swift */,
 				CA49BE14203904BD007AED6D /* SignUpViewController.swift */,
+				CA49BE1620390500007AED6D /* ContentsViewController.swift */,
 				CA49BE022038FD98007AED6D /* Main.storyboard */,
 				CA49BE052038FD98007AED6D /* Assets.xcassets */,
 				CA49BE072038FD98007AED6D /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				CA49BE012038FD98007AED6D /* ViewController.swift in Sources */,
 				CA49BE1720390500007AED6D /* ContentsViewController.swift in Sources */,
 				CA49BDFF2038FD98007AED6D /* AppDelegate.swift in Sources */,
+				CA76A5F8203BC82300BB64A7 /* SignInViewController.swift in Sources */,
 				CA49BE15203904BD007AED6D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

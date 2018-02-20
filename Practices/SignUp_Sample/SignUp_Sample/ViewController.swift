@@ -9,14 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var idTF: UITextField!
-    
-    @IBOutlet weak var pwTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,12 +21,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signInAction(_ sender: UIButton) {
+    @IBAction func tmpStartAction(_ sender: UIButton) {
+        // root view controller on navigation controller
+        let naviRootVC: SignInViewController = self.storyboard!.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        // navigation controller
+        let naviC: UINavigationController = UINavigationController(rootViewController: naviRootVC)
+        // to have navigation tool bar hidden
+        naviC.setNavigationBarHidden(true, animated: false)
+        
+        self.present(naviC, animated: true, completion: nil)
     }
-    
-    @IBAction func signUpAction(_ sender: UIButton) {
-    }
-    
-
 }
 
