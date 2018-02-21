@@ -13,6 +13,8 @@
 		CA4A1696203D0D3100BA5466 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA4A1695203D0D3100BA5466 /* Assets.xcassets */; };
 		CA4A1699203D0D3100BA5466 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4A1697203D0D3100BA5466 /* LaunchScreen.storyboard */; };
 		CA4A16A1203D18D600BA5466 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4A16A0203D18D600BA5466 /* MyTableViewCell.swift */; };
+		CA4A16A3203D3FE100BA5466 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4A16A2203D3FE100BA5466 /* NextViewController.swift */; };
+		CA4A16A5203D41E500BA5466 /* NaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4A16A4203D41E500BA5466 /* NaviViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CA4A1698203D0D3100BA5466 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA4A169A203D0D3100BA5466 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA4A16A0203D18D600BA5466 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		CA4A16A2203D3FE100BA5466 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		CA4A16A4203D41E500BA5466 /* NaviViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				CA4A168E203D0D3100BA5466 /* AppDelegate.swift */,
 				CA4A1690203D0D3100BA5466 /* ViewController.swift */,
+				CA4A16A4203D41E500BA5466 /* NaviViewController.swift */,
+				CA4A16A2203D3FE100BA5466 /* NextViewController.swift */,
 				CA4A16A0203D18D600BA5466 /* MyTableViewCell.swift */,
 				CA4A1692203D0D3100BA5466 /* Main.storyboard */,
 				CA4A1695203D0D3100BA5466 /* Assets.xcassets */,
@@ -140,8 +146,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA4A1691203D0D3100BA5466 /* ViewController.swift in Sources */,
+				CA4A16A3203D3FE100BA5466 /* NextViewController.swift in Sources */,
 				CA4A168F203D0D3100BA5466 /* AppDelegate.swift in Sources */,
 				CA4A16A1203D18D600BA5466 /* MyTableViewCell.swift in Sources */,
+				CA4A16A5203D41E500BA5466 /* NaviViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,18 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var friendList: Array<String>?
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return friendList!.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = friendList![indexPath.row]
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            let nextVC: NextViewController = NextViewController()
+            nextVC.setLabelText(title: title)
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tmpTV: UITableView = UITableView(frame: self.view.bounds, style: .grouped)
+        // transmission succeeded from any outside thing
+        friendList = ["강국자 권사님","강성우 매니저님", "강영미", "강희영 형", "고석산", "길지선", "김동성", "김민태 형", "김시진", "김영민", "김준우 형", "김철호", "류지혁 형", "박용진", "쁨이 아버님"]
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let tmpTV: UITableView = UITableView(frame: self.view.bounds, style: .plain)
         tmpTV.dataSource = self
         tmpTV.delegate = self
-        // ***** cell view from class subclass or UITableViewCell itself
         tmpTV.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tmpTV.register(MyTableViewCell.self, forCellReuseIdentifier: "myCell")
-        // *****
         self.view.addSubview(tmpTV)
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,52 +60,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection")
-        return 7
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // indexPath contains the number of section and row
-        // indexPath.section
-        // indexPath.row
-        
-        // dequeueReusableCell: reuse method, which is used for memory efficiency
-
-        if indexPath.section == 0 {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
-            cell.textLabel?.text = "section: \(indexPath.section), row: \(indexPath.row)"
-            cell.accessoryType = .detailButton
-            cell.backgroundColor = .blue
-            return cell
-        }
-        else {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = "section: \(indexPath.section), row: \(indexPath.row)"
-            cell.accessoryType = .disclosureIndicator
-            return cell
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        print("numberOfSections")
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 60
-        }
-        else {
-            return 44
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
-            // didGetCellLabelText
-        }
-    }
 }
 
