@@ -8,6 +8,7 @@
 
 import UIKit
 
+let key: String = "userID"
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var idTF: UITextField!
@@ -38,7 +39,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // **************************
         // UserDefault로 ID 확인 구문 필요
         
+        var userDic = UserDefaults.standard.dictionary(forKey: key) as? Dictionary<String, Dictionary<String, String>>
         
+        
+        // check if pw's count proper or not
         if checkInputVaild() {
             self.navigationController?.pushViewController(signUpVC, animated: true)
         }
@@ -53,6 +57,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpAction(_ sender: UIButton) {
     }
     
+    // method, which checks 
     func checkInputVaild() -> Bool {
         // to check the count of password
         if let count = pwTF.text?.count, count > 4 {
@@ -62,11 +67,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if idTF.isFirstResponder {
-            idTF.resignFirstResponder()
+        if textField.tag == 1 {
             pwTF.becomeFirstResponder()
         }
-        else if pwTF.isFirstResponder {
+        else {
             pwTF.resignFirstResponder()
         }
         return true
