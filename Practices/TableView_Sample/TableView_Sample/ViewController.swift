@@ -69,5 +69,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return 44
         }
     }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if let title = tableView.cellForRow(at: indexPath)?.textLabel?.text {
+            // didGetCellLabelText
+        }
+    }
 }
 
