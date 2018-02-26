@@ -9,18 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var list: [[String:Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var modelList: [UserDataModel] = []
-        for dic in list {
-            if let data = UserDataModel(dic: dic) {
-                modelList.append(data)
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
