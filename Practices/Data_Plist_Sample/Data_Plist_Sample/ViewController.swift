@@ -39,6 +39,27 @@ class ViewController: UIViewController {
         }
         return [:]
     }
+    
+    func loadPlistForDoc(fileName: String) -> Dictionary<String, String>? {
+        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let fullPath = rootPath + "/" + fileName + ".plist"
+        
+        if !FileManager.default.fileExists(atPath: fullPath) {
+            // unless file exists
+            if let bundlePath = Bundle.main.path(forResource: fileName, ofType: "plist") {
+                try? FileManager.default.copyItem(atPath: bundlePath, toPath: fullPath)
+            }
+        }
+        
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: fullPath)), var dic = try? PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil) as! Dictionary<String, String> {
+            dic.updateValue("wing", forKey: "ID")
+            
+            let newData = try? PropertyListSerialization.data(fromPropertyList: dic, format: .xml, options: 0)
+            try? newData?.write(to: URL(fileURLWithPath: fullPath))
+        }
+        
+        return nil
+    }
 
 
 }
