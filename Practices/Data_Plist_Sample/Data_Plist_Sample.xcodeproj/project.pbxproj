@@ -13,6 +13,8 @@
 		CA1D1A5E2045061E006E48E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1D1A5D2045061E006E48E8 /* Assets.xcassets */; };
 		CA1D1A612045061E006E48E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1D1A5F2045061E006E48E8 /* LaunchScreen.storyboard */; };
 		CA1D1A6920450641006E48E8 /* Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1D1A6820450641006E48E8 /* Sample.plist */; };
+		CA1D1A6B204536CC006E48E8 /* MyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1D1A6A204536CC006E48E8 /* MyUserDefaults.swift */; };
+		CA1D1A6D204536ED006E48E8 /* MyUserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1D1A6C204536ED006E48E8 /* MyUserDefaults.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CA1D1A602045061E006E48E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA1D1A622045061E006E48E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA1D1A6820450641006E48E8 /* Sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Sample.plist; sourceTree = "<group>"; };
+		CA1D1A6A204536CC006E48E8 /* MyUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserDefaults.swift; sourceTree = "<group>"; };
+		CA1D1A6C204536ED006E48E8 /* MyUserDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MyUserDefaults.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				CA1D1A562045061D006E48E8 /* AppDelegate.swift */,
 				CA1D1A582045061E006E48E8 /* ViewController.swift */,
+				CA1D1A6A204536CC006E48E8 /* MyUserDefaults.swift */,
 				CA1D1A5A2045061E006E48E8 /* Main.storyboard */,
 				CA1D1A5D2045061E006E48E8 /* Assets.xcassets */,
 				CA1D1A5F2045061E006E48E8 /* LaunchScreen.storyboard */,
 				CA1D1A622045061E006E48E8 /* Info.plist */,
 				CA1D1A6820450641006E48E8 /* Sample.plist */,
+				CA1D1A6C204536ED006E48E8 /* MyUserDefaults.plist */,
 			);
 			path = Data_Plist_Sample;
 			sourceTree = "<group>";
@@ -128,6 +134,7 @@
 			files = (
 				CA1D1A6920450641006E48E8 /* Sample.plist in Resources */,
 				CA1D1A612045061E006E48E8 /* LaunchScreen.storyboard in Resources */,
+				CA1D1A6D204536ED006E48E8 /* MyUserDefaults.plist in Resources */,
 				CA1D1A5E2045061E006E48E8 /* Assets.xcassets in Resources */,
 				CA1D1A5C2045061E006E48E8 /* Main.storyboard in Resources */,
 			);
@@ -140,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1D1A6B204536CC006E48E8 /* MyUserDefaults.swift in Sources */,
 				CA1D1A592045061E006E48E8 /* ViewController.swift in Sources */,
 				CA1D1A572045061E006E48E8 /* AppDelegate.swift in Sources */,
 			);
