@@ -12,7 +12,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
+        print("First_viewDidLoad")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("First_viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("First_viewDidAppear")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("First_viewWillLayoutSubviews")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("First_viewDidLayoutsubviews")
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +42,21 @@ class ViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("viewWilldisappear")
+        print("First_viewWilldisappear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("viewDidDisappear")
+        print("First_viewDidDisappear")
     }
-
-
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        print("*************************************")
+        return true
+    }
+    
+    // MARK: - Marking
+    // TODO: - What to do
+    // FIXME: - What to fix
 }
 
