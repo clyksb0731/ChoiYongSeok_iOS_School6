@@ -1,4 +1,4 @@
-# iOS School at Fast Campus
+# iOS Development School at Fast Campus
 
 ## About
 
@@ -22,5 +22,5 @@ I started studying iOS development based on Swift as a 6th School's member at Fa
 10. [UI](./Lessons/ui.md)
 11. [Application Life Cycle](./Lessons/application_life_cycle.md)
 
-### contact
+## contact
 > Email: clyksb0731@gmail.com
