@@ -1,0 +1,7 @@
+target 'CocoaPod_Sample' do
+  use_frameworks!
+
+  pod 'Then'
+  pod 'Alamofire'
+
+end
