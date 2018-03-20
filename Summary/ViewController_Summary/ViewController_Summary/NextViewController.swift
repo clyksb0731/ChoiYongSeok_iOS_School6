@@ -15,6 +15,12 @@ class NextViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func actionFunc(_ segue: UIStoryboardSegue) {
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Next_viewDidLoad")
