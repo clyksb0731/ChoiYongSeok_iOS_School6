@@ -9,17 +9,16 @@
 import UIKit
 
 class NextViewController: UIViewController {
+    
+    @IBAction func goToLastVC(_ sender: UIButton) {
+        let lastVC = LastViewController(nibName: "LastViewController", bundle: Bundle.main)
+        self.present(lastVC, animated: true, completion: nil)
+    }
 
     @IBAction func goBackAction(_ sender: UIButton) {
         print("--------------------------------------")
         self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func actionFunc(_ segue: UIStoryboardSegue) {
-        
-    }
-    
-    
+    }    
     
     override func viewDidLoad() {
         super.viewDidLoad()

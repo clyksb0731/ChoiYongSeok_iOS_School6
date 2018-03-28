@@ -13,6 +13,8 @@
 		CA2FA68F204A17F4005B4168 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2FA68E204A17F4005B4168 /* Assets.xcassets */; };
 		CA2FA692204A17F4005B4168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2FA690204A17F4005B4168 /* LaunchScreen.storyboard */; };
 		CA6A9320204FEDD60057A4B0 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6A931F204FEDD60057A4B0 /* NextViewController.swift */; };
+		CAD804A7206BDC6F0063AF5F /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD804A5206BDC6F0063AF5F /* LastViewController.swift */; };
+		CAD804A8206BDC6F0063AF5F /* LastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAD804A6206BDC6F0063AF5F /* LastViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CA2FA691204A17F4005B4168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA2FA693204A17F4005B4168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA6A931F204FEDD60057A4B0 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		CAD804A5206BDC6F0063AF5F /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
+		CAD804A6206BDC6F0063AF5F /* LastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LastViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +63,9 @@
 				CA2FA687204A17F4005B4168 /* AppDelegate.swift */,
 				CA2FA689204A17F4005B4168 /* ViewController.swift */,
 				CA6A931F204FEDD60057A4B0 /* NextViewController.swift */,
+				CAD804A5206BDC6F0063AF5F /* LastViewController.swift */,
 				CA2FA68B204A17F4005B4168 /* Main.storyboard */,
+				CAD804A6206BDC6F0063AF5F /* LastViewController.xib */,
 				CA2FA68E204A17F4005B4168 /* Assets.xcassets */,
 				CA2FA690204A17F4005B4168 /* LaunchScreen.storyboard */,
 				CA2FA693204A17F4005B4168 /* Info.plist */,
@@ -128,6 +134,7 @@
 			files = (
 				CA2FA692204A17F4005B4168 /* LaunchScreen.storyboard in Resources */,
 				CA2FA68F204A17F4005B4168 /* Assets.xcassets in Resources */,
+				CAD804A8206BDC6F0063AF5F /* LastViewController.xib in Resources */,
 				CA2FA68D204A17F4005B4168 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +148,7 @@
 			files = (
 				CA2FA68A204A17F4005B4168 /* ViewController.swift in Sources */,
 				CA6A9320204FEDD60057A4B0 /* NextViewController.swift in Sources */,
+				CAD804A7206BDC6F0063AF5F /* LastViewController.swift in Sources */,
 				CA2FA688204A17F4005B4168 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

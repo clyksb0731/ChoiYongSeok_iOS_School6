@@ -1,6 +1,6 @@
-# UIViewController
-
 `UIKit` `Class`
+
+# UIViewController
 
 This provides the infrastructure for managing the views of UIKit app.
 
@@ -21,6 +21,16 @@ Only the views from one view controller is visible at a time.
 To display a new set of views, the view controller may present new view controller.  
 It could be also shown as a container for example, tab bar controller and navigation controller, which seems as if contains another view controller. These links shows those controllers below:
 - [UINavigationController](UINavigationController.md)
-- [UITabBarController](UINavigationController.md)
+- [UITabBarController](UINavigationController.md)  
+
+## View Controller Instantiation
+- by Constructor
+    + with Nib
+- from Storyboard
+    + UIStoryboard Instance
+    + Property, self.storyboard
 
 
+## View Controller Transition
+- Present Modally
+- Segue

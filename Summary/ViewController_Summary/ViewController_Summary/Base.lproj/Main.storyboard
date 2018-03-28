@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLT-yz-gQT">
-                                <rect key="frame" x="142" y="318" width="91" height="30"/>
+                                <rect key="frame" x="135" y="318" width="105" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="segue button"/>
+                                <state key="normal" title="segue button &gt;"/>
                                 <connections>
                                     <segue destination="DzM-jA-eZS" kind="presentation" id="Yhn-qy-iGz"/>
                                 </connections>
@@ -58,19 +58,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-cH-A4k">
-                                <rect key="frame" x="136" y="345" width="102" height="30"/>
+                                <rect key="frame" x="132" y="345" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Unwind Button"/>
+                                <state key="normal" title="&lt; unwind button"/>
                                 <connections>
-                                    <segue destination="Jjq-7U-UYV" kind="unwind" unwindAction="backSegue:" id="CnC-Rh-ADX"/>
+                                    <segue destination="Jjq-7U-UYV" kind="unwind" unwindAction="unwinToVC:" id="8ll-rm-PgF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSI-HH-ACv">
-                                <rect key="frame" x="137" y="263" width="101" height="30"/>
+                                <rect key="frame" x="131" y="263" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="dismiss button"/>
+                                <state key="normal" title="&lt; dismiss button"/>
                                 <connections>
                                     <action selector="goBackAction:" destination="DzM-jA-eZS" eventType="touchUpInside" id="lIa-ix-d41"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pb-WU-GOy">
+                                <rect key="frame" x="131" y="427" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="present button &gt;"/>
+                                <connections>
+                                    <action selector="goToLastVC:" destination="DzM-jA-eZS" eventType="touchUpInside" id="3EX-ev-8Wa"/>
                                 </connections>
                             </button>
                         </subviews>
