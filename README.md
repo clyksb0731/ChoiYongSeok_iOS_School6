@@ -10,17 +10,18 @@ I started studying iOS development based on Swift as a 6th School's member at Fa
 
 ## Lessons
 
-1. [Git](./Lessons/git.md)
-2. [Variable](./Lessons/variable.md)
-3. [Function](./Lessons/function.md)
-4. [Condition](./Lessons/condition.md)
-5. [Loop](./Lessons/loop.md)
-6. [Collection Type](./Lessons/collection_type)
-7. [Class / Struct](./Lessons/class_struct.md)
-8. [Optional](./Lessons/optional.md)
-9. [Property / Access Modifier](./Lessons/property_access_modifier.md)
-10. [UI](./Lessons/ui.md)
-11. [Application Life Cycle](./Lessons/application_life_cycle.md)
+1. [Git](./Lessons_Learning/git.md)
+2. [Variable](./Lessons_Learning/variable.md)
+3. [Function](./Lessons_Learning/function.md)
+4. [Condition](./Lessons_Learning/condition.md)
+5. [Loop](./Lessons_Learning/loop.md)
+6. [Collection Type](./Lessons_Learning/collection_type)
+7. [Class / Struct](./Lessons_Learning/class_struct.md)
+8. [Optional](./Lessons_Learning/optional.md)
+9. [Property / Access Modifier](./Lessons_Learning/property_access_modifier.md)
+10. [UI](./Lessons_Learning/ui.md)
+11. [Application Life Cycle](./Lessons_Learning/application_life_cycle.md)
+12. [View Controller](./Lessons_Learning/view_controller.md)
 
 ## contact
 > Email: clyksb0731@gmail.com
