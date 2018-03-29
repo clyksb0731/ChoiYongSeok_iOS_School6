@@ -7,15 +7,42 @@
 //
 
 import UIKit
+import Alamofire
 
 class PostListViewController: UIViewController {
     
     @IBOutlet weak var postList: UITableView!
+    let postListAdrs: String = "https://api.lhy.kr/posts/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // postList.delegate = self due to done connection already
         // postList.dataSource = self due to done connection already
+        Alamofire.request(postListAdrs)
+        .validate()
+        .responseData { (response) in
+            switch response.result {
+            case .success(let data):
+                print(data)
+                if let postListData = try? JSONDecoder().decode([PostObject].self, from: data) {
+                print(postListData)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+//        Alamofire.request(postListAdrs)
+//        .validate()
+//            .responseJSON { (response) in
+//                switch response.result {
+//                case .success(let data):
+//                    print(data)
+//                case .failure(let error):
+//                    print(error.localizedDescription)
+//                }
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {
