@@ -31,7 +31,7 @@ class PostListViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
-        
+//
 //        Alamofire.request(postListAdrs)
 //        .validate()
 //            .responseJSON { (response) in

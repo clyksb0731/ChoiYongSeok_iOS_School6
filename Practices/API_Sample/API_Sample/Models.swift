@@ -39,7 +39,7 @@ struct PostObject: Codable {
     var author: People
     var images: Array<String>
     var title: String
-    var imageCover: String
+    var imageCover: String?
     var content: String
     var createdDate: String
     
