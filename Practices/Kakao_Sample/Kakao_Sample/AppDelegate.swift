@@ -12,6 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // 다른데서 바로 접근할 수 있도록... AppDelegate.instance.window와 같이..
+    static var instance: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         if KOSession.isKakaoAgeAuthCallback(url) {
@@ -22,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        initializeApp()
+        
         return true
     }
 
@@ -47,6 +54,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: - Initialize App
+    
+    private func initializeApp() {
+        setupSessionChangeNotification()
+        setupRootViewController()
+    }
+    
+    private func setupSessionChangeNotification() {
+        // KOSessionDidChange가 됐을 때 이 Notification이 작동한다.
+        NotificationCenter.default.addObserver(forName: Notification.Name.KOSessionDidChange, object: nil, queue: .main) { [unowned self] noti in
+            guard let session = noti.object as? KOSession else { return }
+            session.isOpen() ? print("Login") : print("Logout")
+            self.setupRootViewController()
+            
+        }
+    }
+    
+    func setupRootViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // 스토리보드의 처음 실행하는 view controller를 인스턴스화 한다.
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        if KOSession.shared().isOpen() {
+            let mainVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+            navigationController.viewControllers = [mainVC]
+        }
+        else {
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            navigationController.viewControllers = [loginVC]
+        }
+        window?.rootViewController = navigationController
     }
 
 

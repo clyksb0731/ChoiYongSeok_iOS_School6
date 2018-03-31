@@ -16,13 +16,29 @@ class LoginViewController: UIViewController {
         // Close Old Session
         session.isOpen() ? session.close() : () // () 는 아무것도 안할 때
         
-        session.open { (error) in
+        session.open(completionHandler: { (error) in
             guard session.isOpen() else {
                 // Open Session Failed
+                // 에러코드는 KOErrorCode 참고
+                // error! 는 왜?
+                error != nil ? print(error!.localizedDescription) : print("Chanceled")
                 return
             }
             // Login Success
-        }        
+            // Session Login 후처리는 KOSessionDidChange Notification을 통해 처리
+            print("Login Success")
+        }, authTypes: [NSNumber(value: KOAuthType.talk.rawValue)])
+        
+        // KOAuthType - talk(2), sttory(4), account(8)
+
+            // AppDelegate에 특별히 아무것도 만들어 놓지 않았을 때
+            // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            // appDelegate.setupRootViewController()
+            
+            // singleton pattern으로서 만들어 놨을 때는 이렇게 처리
+            // AppDelegate.instance.setupRootViewController()
+            
+      
     }
 
     override func viewDidLoad() {
