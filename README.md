@@ -22,6 +22,7 @@ I started studying iOS development based on Swift as a 6th School's member at Fa
 10. [UI](./Lessons_Learning/ui.md)
 11. [Application Life Cycle](./Lessons_Learning/application_life_cycle.md)
 12. [View Controller](./Lessons_Learning/view_controller.md)
+    - [Navigation Controller](./Lessons_Learning/navigation_controller.md)
 
 ## contact
 > Email: clyksb0731@gmail.com
