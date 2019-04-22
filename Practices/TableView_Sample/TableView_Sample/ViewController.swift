@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var number: Int = 0
     var friendList: Array<String> = ["강국자 권사님","강성우 매니저님", "강영미", "강희영 형", "고석산", "길지선", "김동성", "김민태 형", "김시진", "김영민", "김준우 형", "김철호", "류지혁 형", "박용진", "쁨이 아버님"]
     
     var tableView: UITableView!
@@ -17,12 +18,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView = UITableView(frame: self.view.bounds, style: .plain)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAnotherList(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addList(_:)))
+        
         self.navigationItem.title = "리스트"
         
-        // transmission succeeded from any outside thing
-        
+        self.tableView = UITableView(frame: self.view.bounds, style: .plain)
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -41,8 +43,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func addList(_ sender: UIButton) {
+    @objc func addList(_ sender: UIBarButtonItem) {
         self.friendList.append(contentsOf: ["강국자 권사님","강성우 매니저님", "강영미", "강희영 형", "고석산", "길지선", "김동성", "김민태 형", "김시진", "김영민", "김준우 형", "김철호", "류지혁 형", "박용진", "쁨이 아버님"])
+        
+        self.tableView.reloadData()
+    }
+    
+    @objc func addAnotherList(_ sender: UIBarButtonItem) {
+        self.friendList = ["\(self.number)"] + self.friendList
+        self.number += 1
         
         self.tableView.reloadData()
     }
