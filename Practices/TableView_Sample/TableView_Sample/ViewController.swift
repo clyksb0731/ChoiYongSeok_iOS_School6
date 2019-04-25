@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         self.navigationItem.title = "리스트"
         
         self.tableView = UITableView(frame: self.view.bounds, style: .plain)
+        self.tableView.contentInsetAdjustmentBehavior = .never // FIXME: For over iPhone X
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -47,6 +48,10 @@ class ViewController: UIViewController {
         self.friendList.append(contentsOf: ["강국자 권사님","강성우 매니저님", "강영미", "강희영 형", "고석산", "길지선", "김동성", "김민태 형", "김시진", "김영민", "김준우 형", "김철호", "류지혁 형", "박용진", "쁨이 아버님"])
         
         self.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.tableView.contentOffset.y = self.tableView.contentSize.height - UIScreen.main.bounds.height
+        }
     }
     
     @objc func addAnotherList(_ sender: UIBarButtonItem) {
@@ -54,6 +59,14 @@ class ViewController: UIViewController {
         self.number += 1
         
         self.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.tableView.contentOffset.y = self.tableView.contentSize.height - UIScreen.main.bounds.height
+//            self.tableView.scrollsToTop = true
+            
+//            let indexPath = IndexPath(row: self.friendList.count - 1, section: 0)
+//            self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
     }
     
     
