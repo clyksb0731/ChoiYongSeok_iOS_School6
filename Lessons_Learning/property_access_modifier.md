@@ -1,2 +1,0 @@
-# Property / Access Modifier
-
